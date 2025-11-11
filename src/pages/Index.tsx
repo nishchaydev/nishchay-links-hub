@@ -22,27 +22,21 @@ const Index = () => {
     },
     {
       icon: <ExternalLink className="w-5 h-5" />,
-      label: "Portfolio (GitHub Pages)",
-      url: "https://nishchaydev.github.io",
-      emoji: "🚀"
-    },
-    {
-      icon: <ExternalLink className="w-5 h-5" />,
       label: "Gym Management System",
-      url: "https://github.com/nishchaydev/gym-management-system",
+      url: "https://github.com/nishchaydev/tristar-fitness-clean",
       emoji: "🧠"
     },
     {
       icon: <ExternalLink className="w-5 h-5" />,
       label: "Smart India Hackathon Project",
-      url: "https://github.com/nishchaydev/sih2025",
-      emoji: "🌾"
+      url: "https://github.com/nishchaydev/SIH-",
+      emoji: "🌦️"
     },
     {
       icon: <ExternalLink className="w-5 h-5" />,
-      label: "Simons 2.0 – Quant Trading System",
-      url: "https://github.com/nishchaydev/simons-2.0",
-      emoji: "📊"
+      label: "Personal Tracker",
+      url: "https://github.com/nishchaydev/tracker",
+      emoji: "💕"
     }
   ];
 
@@ -95,7 +89,7 @@ const Index = () => {
         {/* Footer */}
         <footer className="text-center space-y-2 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <span>Built by Nishchay Gupta 💻 with TypeScript & Lovable</span>
+            <span>Built by Nishchay Gupta</span>
           </div>
           <div className="flex items-center justify-center">
             <QrCode className="w-4 h-4 text-muted-foreground/50" />
