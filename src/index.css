@@ -38,9 +38,11 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
     
-    --link-card: 0 0% 100%;
-    --link-card-hover: 217 91% 60%;
-    --transition-smooth: all 0.2s ease;
+    --gradient-start: 220 60% 99%;
+    --gradient-end: 217 100% 97%;
+    --shadow-card: 0 2px 8px -2px hsl(217 91% 60% / 0.1);
+    --shadow-card-hover: 0 8px 24px -4px hsl(217 91% 60% / 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
