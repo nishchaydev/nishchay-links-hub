@@ -1,4 +1,10 @@
 import { ExternalLink, Github, Linkedin, Mail, QrCode } from "lucide-react";
+import githubIcon from "@/assets/github-icon.png";
+import linkedinIcon from "@/assets/linkedin-icon.png";
+import emailIcon from "@/assets/email-icon.png";
+import gymIcon from "@/assets/gym-icon.png";
+import hackathonIcon from "@/assets/hackathon-icon.png";
+import trackerIcon from "@/assets/tracker-icon.png";
 
 const Index = () => {
   const links = [
@@ -6,37 +12,43 @@ const Index = () => {
       icon: <Github className="w-5 h-5" />,
       label: "GitHub",
       url: "https://github.com/nishchaydev",
-      emoji: "💻"
+      image: githubIcon,
+      description: "View my code projects"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
       url: "https://linkedin.com/in/nishchaydev",
-      emoji: "🔗"
+      image: linkedinIcon,
+      description: "Connect with me"
     },
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
       url: "mailto:nishchay.gupta@cdgi.edu.in",
-      emoji: "📧"
+      image: emailIcon,
+      description: "Get in touch"
     },
     {
       icon: <ExternalLink className="w-5 h-5" />,
       label: "Gym Management System",
       url: "https://github.com/nishchaydev/tristar-fitness-clean",
-      emoji: "🧠"
+      image: gymIcon,
+      description: "Full-stack fitness app"
     },
     {
       icon: <ExternalLink className="w-5 h-5" />,
       label: "Smart India Hackathon Project",
       url: "https://github.com/nishchaydev/SIH-",
-      emoji: "🌦️"
+      image: hackathonIcon,
+      description: "Innovation challenge"
     },
     {
       icon: <ExternalLink className="w-5 h-5" />,
       label: "Personal Tracker",
       url: "https://github.com/nishchaydev/tracker",
-      emoji: "💕"
+      image: trackerIcon,
+      description: "Habit tracking app"
     }
   ];
 
@@ -67,28 +79,53 @@ const Index = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block w-full bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl p-5 sm:p-6
-                       transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]
-                       hover:border-primary/50 hover:bg-card hover:shadow-[0_8px_24px_-4px_hsl(217_91%_60%/0.2)]
-                       shadow-[0_2px_8px_-2px_hsl(217_91%_60%/0.1)]"
+              className="group block w-full bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden
+                       transition-all duration-500 hover:scale-[1.03] active:scale-[0.98]
+                       hover:border-primary/50 hover:bg-card/90 hover:shadow-[0_12px_40px_-8px_hsl(217_91%_60%/0.3)]
+                       shadow-[0_2px_12px_-2px_hsl(217_91%_60%/0.15)]
+                       relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/5 before:to-transparent before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-100
+                       animate-in fade-in slide-in-from-bottom-4"
               style={{
-                animationDelay: `${index * 60}ms`,
-                animationFillMode: 'backwards'
+                animationDelay: `${index * 80}ms`,
+                animationFillMode: 'backwards',
+                animationDuration: '600ms'
               }}
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4 sm:gap-5">
-                  <span 
-                    className="text-2xl sm:text-3xl transition-transform duration-300 group-hover:scale-110" 
-                    aria-hidden="true"
-                  >
-                    {link.emoji}
-                  </span>
-                  <span className="text-base sm:text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
-                    {link.label}
-                  </span>
+              <div className="flex items-center gap-5 sm:gap-6 p-5 sm:p-6 relative z-10">
+                <div className="relative flex-shrink-0">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-background/50 border border-border/30 
+                                transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:border-primary/50
+                                shadow-sm group-hover:shadow-lg group-hover:shadow-primary/20">
+                    <img 
+                      src={link.image} 
+                      alt={link.label}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-primary/5 rounded-xl opacity-0 
+                                group-hover:opacity-100 transition-opacity duration-500 blur-md -z-10"></div>
                 </div>
-                <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6 text-muted-foreground/60 group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
+                
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-base sm:text-lg font-semibold text-foreground group-hover:text-primary 
+                                   transition-colors duration-300 truncate">
+                      {link.label}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground/80 
+                               transition-colors duration-300 truncate">
+                    {link.description}
+                  </p>
+                </div>
+                
+                <div className="flex-shrink-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center
+                                transition-all duration-500 group-hover:bg-primary group-hover:rotate-45 group-hover:scale-110">
+                    <ExternalLink className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:text-primary-foreground 
+                                           transition-all duration-500" />
+                  </div>
+                </div>
               </div>
             </a>
           ))}
